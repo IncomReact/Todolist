@@ -15,11 +15,20 @@ class Todo extends Component {
 
       
      onUpdate = (dataForm) => {
+<<<<<<< HEAD
         console.log('dataForm ==>', dataForm)
         
          this.setState({   
             globalItems : [...this.state.globalItems, dataForm]
         })
+=======
+		console.log('dataForm ==>', dataForm)
+		if(this.state.globalItems.indexOf(dataForm) === false) {
+			this.setState({   
+				globalItems : [...this.state.globalItems, dataForm]
+			});
+		}
+>>>>>>> 8c6b8d2f2fb67bbf6638ddc41319b4e3b9bd721e
      } 
 
     
@@ -30,8 +39,12 @@ class Todo extends Component {
         
         return (
             <React.Fragment>
+<<<<<<< HEAD
                 <Form update = {this.onUpdate}/>
                 <List data={this.state.globalItems}/>
+=======
+                <Form update={this.onUpdate} liststate={this.state.globalItems} />
+>>>>>>> 8c6b8d2f2fb67bbf6638ddc41319b4e3b9bd721e
             </React.Fragment>
         )
     }
