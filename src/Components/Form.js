@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import List from './List'
+// import List from './List'
 
 class Form extends Component {
 
@@ -19,20 +19,30 @@ class Form extends Component {
     this.setState({text: event.target.value});
   }
 
+  
+  
   onSubmit = (event) => {
     event.preventDefault();
     if(this.state.text !== '') {
       this.setState({
         text: '',
-        items: [...this.state.items, this.state.text]
-      });
-      this.props.update({dataForm : this.state.items});
-    }
-    
+        items: [...this.state.items, this.state.text], 
+      })
+      // this.props.update({dataForm : this.state.items});
+    }    
   }
 
+  componentDidUpdate() {
+    if (this.state.items.length !== 0 ) {
+      this.props.update({dataForm : this.state.items});
+    } 
+   }
+   
+
+  
+
     render() { 
-      console.log('this.state.items', this.state.items)
+      // console.log('this.state.items', this.state.items)
       
         return (
             <React.Fragment>
@@ -41,7 +51,7 @@ class Form extends Component {
                     <button>ADD</button>
                 </form>
                 
-                <List data={this.state.items}/> 
+                {/* <List data={this.state.items}/>  */}
                 
             </React.Fragment>
 

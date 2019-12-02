@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Form from './Form'
+import List from './List'
 
 
 class Todo extends Component {
@@ -12,8 +13,10 @@ class Todo extends Component {
         };
       }
 
+      
      onUpdate = (dataForm) => {
         console.log('dataForm ==>', dataForm)
+        
          this.setState({   
             globalItems : [...this.state.globalItems, dataForm]
         })
@@ -22,12 +25,13 @@ class Todo extends Component {
     
 
     render() {
-        const globalItems = this.state.globalItems
-        console.log('globalItems ===>',globalItems)
+        // const globalItems = this.state.globalItems
+        // console.log('globalItems ===>',globalItems)
         
         return (
             <React.Fragment>
                 <Form update = {this.onUpdate}/>
+                <List data={this.state.globalItems}/>
             </React.Fragment>
         )
     }
