@@ -25,15 +25,23 @@ class Form extends Component {
       this.setState({
         text: '',
         items: [...this.state.items, this.state.text]
-      });
-      this.props.update({dataForm : this.state.items});
+	  }, () => {
+		//   this.props.update({dataForm : this.state.items});
+		// ICI dans le cas du callBack, c'ets bien plus intéressant que le CWU car evite les boucles infinits. 
+	});
+      
     }
     
   }
+  componentDidUpdate() {
+	if(this.state.items !== this.props.liststate) {
+		this.props.update({dataForm : this.state.items});
+	}
+  }
 
     render() { 
-      console.log('this.state.items', this.state.items)
-      
+	  console.log('this.state.items', this.state.items);
+    
         return (
             <React.Fragment>
                 <form className="flex space-between" onSubmit={this.onSubmit}>
