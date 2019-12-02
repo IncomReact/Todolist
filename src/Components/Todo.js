@@ -13,10 +13,12 @@ class Todo extends Component {
       }
 
      onUpdate = (dataForm) => {
-        console.log('dataForm ==>', dataForm)
-         this.setState({   
-            globalItems : [...this.state.globalItems, dataForm]
-        })
+		console.log('dataForm ==>', dataForm)
+		if(this.state.globalItems.indexOf(dataForm) === false) {
+			this.setState({   
+				globalItems : [...this.state.globalItems, dataForm]
+			});
+		}
      } 
 
     
@@ -27,7 +29,7 @@ class Todo extends Component {
         
         return (
             <React.Fragment>
-                <Form update = {this.onUpdate}/>
+                <Form update={this.onUpdate} liststate={this.state.globalItems} />
             </React.Fragment>
         )
     }
