@@ -17,17 +17,10 @@ class Todo extends Component {
       
       
      onUpdate = (dataForm) => {
-        
-        console.log('dataForm ==>', dataForm)
-        // this.setState({   
-        //     globalItems : [...this.state.globalItems, dataForm]
-        // })
-		if(this.state.globalItems.indexOf(dataForm) === false) {
-			this.setState({   
-				globalItems : [...this.state.globalItems, dataForm]
-			});
-        }
-        
+		    console.log('dataForm ==>', dataForm);
+		    this.setState({   
+			    globalItems : [...this.state.globalItems, dataForm]
+		    });
      } 
 
     
