@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Item from './Item'
-// import Todo from './Todo'
+
 
 class List extends Component {
 
@@ -18,7 +18,7 @@ class List extends Component {
     render() {
 
         const items = this.props.data;
-        console.log('map items ==>',items)
+        console.log('items ==>',items)
 
         return (
                 <React.Fragment>
