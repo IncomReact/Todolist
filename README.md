@@ -1,2 +1,2 @@
 # Todolist 
-Simple Todolist with React.js - CLI
+Simple Todolist with React.js - CLI.
