@@ -23,7 +23,7 @@ class Todo extends Component {
         //     globalItems : [...this.state.globalItems, dataForm]
         // })
 		if(this.state.globalItems.indexOf(dataForm) === false) {
-			this.setState({   
+			 this.setState({   
 				globalItems : [...this.state.globalItems, dataForm]
 			});
         }
