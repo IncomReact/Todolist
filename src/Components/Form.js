@@ -9,7 +9,8 @@ class Form extends Component {
     this.state = {
       text: '',
       items: [],
-    };
+	  };
+	  this.isSubmitting = false;
   }
 
   onChange = (event) => {
@@ -19,6 +20,7 @@ class Form extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     if(this.state.text !== '') {
+		this.isSubmitting = true;
       this.setState({
         text: '',
         items: [...this.state.items, this.state.text]
@@ -33,8 +35,9 @@ class Form extends Component {
     
   }
   componentDidUpdate() {
-	if(this.state.items !== this.props.liststate) {
+	if(this.isSubmitting) {
 		this.props.update({dataForm : this.state.items});
+		this.isSubmitting = false;
 	}
   }
 

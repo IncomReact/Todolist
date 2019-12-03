@@ -17,6 +17,7 @@ class Todo extends Component {
       
       
      onUpdate = (dataForm) => {
+<<<<<<< HEAD
         
         console.log('dataForm ==>', dataForm)
         // this.setState({   
@@ -28,6 +29,12 @@ class Todo extends Component {
 			});
         }
         
+=======
+		    console.log('dataForm ==>', dataForm);
+		    this.setState({   
+			    globalItems : [...this.state.globalItems, dataForm]
+		    });
+>>>>>>> 8671d5a5148fc678c16eb6974524c8b0f1af038f
      } 
 
     
