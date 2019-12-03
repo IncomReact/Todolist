@@ -25,21 +25,18 @@ class Form extends Component {
         text: '',
         items: [...this.state.items, this.state.text]
     }
-  //   , () => {
-	// 	  this.props.update({dataForm : this.state.items});
+    , () => {
+		  this.props.update(this.state.items);
 	// 	// ICI dans le cas du callBack, c'ets bien plus intéressant que le CWU car evite les boucles infinits. 
-  // }
-  );
-      
+    })  
     }
-    
   }
-  componentDidUpdate() {
-	if(this.isSubmitting) {
-		this.props.update({dataForm : this.state.items});
-		this.isSubmitting = false;
-	}
-  }
+  // componentDidUpdate() {
+	// if(this.isSubmitting) {
+	// 	this.props.update({dataForm : this.state.items});
+	// 	this.isSubmitting = false;
+	// }
+  // }
 
     render() { 
 	  // console.log('this.state.items', this.state.items);
