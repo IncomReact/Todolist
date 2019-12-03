@@ -14,11 +14,9 @@ class Todo extends Component {
 
      onUpdate = (dataForm) => {
 		console.log('dataForm ==>', dataForm);
-		if(this.state.globalItems.indexOf(dataForm) === -1) {
-			this.setState({   
-				globalItems : [...this.state.globalItems, dataForm]
-			});
-		}
+		this.setState({   
+			globalItems : [...this.state.globalItems, dataForm]
+		});
      } 
 
     
